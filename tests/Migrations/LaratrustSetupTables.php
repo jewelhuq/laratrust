@@ -22,6 +22,7 @@ class LaratrustSetupTables extends Migration
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         // Create table for storing permissions
@@ -31,6 +32,7 @@ class LaratrustSetupTables extends Migration
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         // Create table for storing teams
@@ -40,6 +42,7 @@ class LaratrustSetupTables extends Migration
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         // Create table for associating roles to users and teams (Many To Many Polymorphic)

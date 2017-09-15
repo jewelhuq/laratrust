@@ -24,12 +24,12 @@ class LaratrustTestCase extends TestCase
             'database' => ':memory:',
             'prefix'   => '',
         ]);
-    }
-
-    public function setUp()
-    {
-        parent::setUp();
-        $this->migrate();
+        $app['config']->set('laratrust.user_models.users', 'Laratrust\Tests\Models\User');
+        $app['config']->set('laratrust.models', [
+            'role' => 'Laratrust\Tests\Models\Role',
+            'permission' => 'Laratrust\Tests\Models\Permission',
+            'team' => 'Laratrust\Tests\Models\Team',
+        ]);
     }
 
     public function migrate()
