@@ -30,3 +30,8 @@ Three directives are available for use within your Blade templates. What you giv
         <p>This is visible if the user has the role and owns the object. Gets translated to 
         \Laratrust::hasRoleAndOwns('admin', $post)</p>
     @endOwns
+    
+    
+     @role('administrator||subadministrator')
+     <p>This is visible if the user has the role administrator or subadministrator.
+     @endrole
